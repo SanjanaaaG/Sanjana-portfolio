@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanjana Gate · Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF5FD;--ink:#2B1240;--mute:#6E5A85;--card:#FFFFFF;--line:#E8DAF3;--blue:#7B3FB5;--sun:#FFB4CC;--onblue:#FFFFFF;
+--display:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"DM Sans",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B0F28;--ink:#F6ECFB;--mute:#BDA6D0;--card:#2A1A3D;--line:#43295E;--blue:#8E4FD0}}
+:root[data-theme="dark"]{--bg:#1B0F28;--ink:#F6ECFB;--mute:#BDA6D0;--card:#2A1A3D;--line:#43295E;--blue:#8E4FD0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.02em}
+
+/* hero */
+.hero{background:var(--blue);color:var(--onblue);padding:56px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;border-radius:50%;background:var(--sun);opacity:.95}
+.hero .wrap{position:relative;z-index:1}
+.role{font-weight:500;font-size:1.05rem;margin:0 0 18px;opacity:.9}
+h1{font-weight:800;font-size:clamp(3.6rem,15vw,9.5rem);line-height:.88}
+.pitch{max-width:34rem;font-size:1.2rem;margin:28px 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:48px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--onblue);color:var(--onblue);transition:background .2s,color .2s}
+.btn:hover{background:var(--onblue);color:var(--blue)}
+.btn.main{background:var(--sun);border-color:var(--sun);color:#2B1240}
+.btn.main:hover{background:#fff;border-color:#fff}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid rgba(255,255,255,.35)}
+.facts div{padding:22px 14px 26px 0}
+.facts b{display:block;font:800 clamp(2rem,6vw,3.4rem)/1 var(--display)}
+.facts span{font-size:.92rem;opacity:.9}
+
+/* sections */
+section{padding:72px 0 0}
+h2{font-weight:800;font-size:clamp(2rem,6vw,3.2rem);margin-bottom:28px}
+.about{display:grid;gap:18px;max-width:42rem;font-size:1.15rem}
+.about p{margin:0}
+
+.job{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 24px}
+.jobhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-bottom:6px}
+.jobhead h3{font-size:1.7rem}
+.when{color:var(--mute);font-weight:500}
+.where{margin:0 0 22px;color:var(--mute)}
+.themes{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.themes h4{margin:0 0 8px;font:800 1.15rem var(--display);color:var(--blue)}
+.themes ul{margin:0;padding-left:1.1rem}
+.themes li{margin-bottom:8px}
+
+.stack{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;padding-top:16px;border-top:1px solid var(--line)}
+.row h3{font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:5px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:500;font-size:.95rem}
+.chips span.cert{background:var(--sun);border-color:var(--sun);color:#2B1240;font-weight:700}
+
+.proj{border-radius:22px;background:var(--ink);color:var(--bg);padding:30px 24px}
+.proj+.proj{margin-top:18px}
+.proj a.gh{display:inline-block;margin-top:18px;font-weight:700;color:inherit;text-decoration:underline}
+.proj h3{font-size:1.8rem;margin-bottom:6px}
+.proj .meta{opacity:.75;margin:0 0 16px}
+.proj ul{margin:0 0 20px;padding-left:1.1rem}
+.proj li{margin-bottom:8px}
+.proj .chips span{background:transparent;border-color:rgba(255,255,255,.35);color:inherit}
+
+.edu{display:grid;gap:8px;max-width:38rem}
+.edu h3{font-size:1.5rem}
+.edu p{margin:0;color:var(--mute)}
+.edu strong{color:var(--ink)}
+
+footer{margin-top:80px;background:var(--sun);color:#2B1240;padding:56px 0 40px}
+footer h2{font-size:clamp(2.4rem,9vw,5.5rem);margin-bottom:22px}
+footer .links{display:flex;flex-wrap:wrap;gap:10px 26px;font-weight:700;font-size:1.1rem}
+footer small{display:block;margin-top:34px;opacity:.7}
+
+@media (max-width:640px){
+ .facts{grid-template-columns:repeat(2,1fr)}
+ .row{grid-template-columns:1fr;gap:8px}
+ .hero::after{width:220px;height:220px;right:-70px;top:-70px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="role">Full Stack Developer, Pune</p>
+    <h1>Sanjana<br>Gate</h1>
+    <p class="pitch">I build secure, scalable banking software with Java, Spring Boot and Angular, and I keep the code clean enough that the next person enjoys reading it.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:sanjanagate01@gmail.com">Email me</a>
+      <a class="btn" href="#work">See my work</a>
+    </div>
+    <div class="facts">
+      <div><b>2.5+</b><span>years building</span></div>
+      <div><b>10+</b><span>secure REST APIs</span></div>
+      <div><b>15+</b><span>business features</span></div>
+      <div><b>20+</b><span>production releases</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>Hello.</h2>
+    <div class="about">
+      <p>I'm a full stack developer with 2.5+ years of experience building end-to-end applications. I design APIs that are secure by default, and I care about clean architecture and maintainability.</p>
+      <p>Day to day, I work on enterprise applications for a multinational bank, where reliability and regulatory rules shape every decision.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Where I work</h2>
+    <article class="job">
+      <div class="jobhead"><h3>Software Developer Engineer</h3><span class="when">Apr 2024 to now</span></div>
+      <p class="where">LTM, Pune. Full stack developer for a multinational bank, on Real-Time Credit Services applications for secure financial operations and regulatory workflows.</p>
+      <div class="themes">
+        <div>
+          <h4>What I build</h4>
+          <ul>
+            <li>Enterprise banking applications in Java, Spring Boot, Angular and SQL, with 15+ business features delivered.</li>
+            <li>10+ secure RESTful APIs with JWT authentication, protecting access to sensitive business data.</li>
+            <li>Microservices on Spring Boot and Apache Kafka for reliable asynchronous communication and better scalability.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>How I ship</h4>
+          <ul>
+            <li>Build and deployment pipelines with Jenkins, Maven, Gradle, Bitbucket and JFrog.</li>
+            <li>Code quality and security checks with SonarQube and Black Duck.</li>
+            <li>Business workflows automated with AutoSys, plus volume, load and performance testing.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>How I work</h4>
+          <ul>
+            <li>Agile teams across disciplines: feature work, production support and defect resolution.</li>
+            <li>20+ production releases delivered.</li>
+            <li>AI-powered development tools to speed up routine tasks and improve code quality.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Toolbox</h2>
+    <div class="stack">
+      <div class="row"><h3>Languages</h3><div class="chips"><span>Java</span><span>SQL</span><span>HTML</span><span>TypeScript</span><span>JavaScript</span></div></div>
+      <div class="row"><h3>Frameworks</h3><div class="chips"><span>Spring Boot</span><span>Spring JPA</span><span>Angular</span><span>JWT</span></div></div>
+      <div class="row"><h3>Technologies</h3><div class="chips"><span>RESTful APIs</span><span>JDBC</span><span>SDLC</span><span>Git</span><span>Jenkins</span><span>UCD</span><span>Autosys</span><span>TeamCity</span><span>Grafana</span><span>Openshift</span></div></div>
+      <div class="row"><h3>Certified</h3><div class="chips"><span class="cert">Oracle Certified Java SE 11</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <article class="proj">
+      <h3>EventHub: Real-Time Ticket Booking System</h3>
+      <p class="meta">A BookMyShow-style platform built as five microservices</p>
+      <ul>
+        <li>Designing the platform as five microservices (API Gateway, Auth, Event, Booking and Notification) on Spring Boot, MySQL and Apache Kafka for asynchronous event flow.</li>
+        <li>Built the Event Service, and implementing the Auth Service with Spring Security and JWT (JJWT) carrying user ID and role claims.</li>
+        <li>Designing for concurrency and resilience: Redis (Redisson) distributed locks to prevent double-booking, Resilience4j circuit breakers, and Prometheus/Grafana observability, containerised with Docker Compose.</li>
+      </ul>
+      <div class="chips"><span>Java 17</span><span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>MySQL</span><span>Apache Kafka</span><span>Redis (Redisson)</span><span>Resilience4j</span><span>Docker Compose</span></div>
+      <a class="gh" href="https://github.com/deepak0103gupta/Real-Time-Ticket-Booking-System">View on GitHub</a>
+    </article>
+    <article class="proj">
+      <h3>OneStore: E-Commerce Application</h3>
+      <p class="meta">Spring Boot backend with an Angular storefront</p>
+      <ul>
+        <li>Built a stateless REST backend (Spring Boot, Spring Data JPA, MySQL) with 40+ endpoints for users, products, categories, cart, orders, payments, reviews and addresses, secured with JWT and Spring Security.</li>
+        <li>Implemented the cart-to-order workflow with stock validation and reservation, order and payment status lifecycles, and a payment webhook handler for success and failure callbacks.</li>
+        <li>Developed an Angular 21 frontend with Angular Material for category browsing, login and registration, product add/edit with image upload, and profile and address management, with a JWT HTTP interceptor.</li>
+      </ul>
+      <div class="chips"><span>Java 17</span><span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>Spring Data JPA</span><span>MySQL</span><span>Angular 21</span><span>Angular Material</span></div>
+      <a class="gh" href="https://github.com/deepak0103gupta/V-F-Basket">View on GitHub</a>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu">
+      <h3>Mumbai University</h3>
+      <p><strong>Bachelor of Computer Science Engineering</strong>, Mumbai. Aug 2019 to Jul 2023.</p>
+      <p>CGPA: <strong>9.26</strong></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Let's talk.</h2>
+    <div class="links">
+      <a href="mailto:sanjanagate01@gmail.com">sanjanagate01@gmail.com</a>
+      <a href="tel:+918454812090">8454812090</a>
+      <a href="https://www.linkedin.com/in/sanjanagate/">LinkedIn</a>
+      <a href="https://github.com/SanjanaGate">GitHub</a>
+    </div>
+    <small>Sanjana Gate, Pune, India</small>
+  </div>
+</footer>
+
+</body>
+</html>
